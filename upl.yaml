@@ -1,0 +1,52 @@
+# Definisi Syntax Highlighting untuk UPL (Ukong Programming Language)
+# Untuk Micro Editor
+
+# Untuk mengaktifkan, salin file ini ke ~/.config/micro/syntax/upl.yaml
+
+filetype: upl
+
+detect:
+    filename: "\.upl$"
+
+rules:
+    # Komentar
+    - comment:
+        start: "#"
+        end: "$"
+        hl: true
+
+    # String dalam kutip ganda
+    - string:
+        start: "\""
+        end: "\""
+        hl: true
+
+    # Keyword, menggunakan grup warna 'keyword'
+    - identifier:
+        regex: "\\b(jika|selama|ulangi|fungsi|selesai|lainnya|kembali|cetak)\\b"
+        kind: "keyword"
+
+    # Boolean, menggunakan grup warna 'special'
+    - identifier:
+        regex: "\\b(benar|salah)\\b"
+        kind: "special"
+
+    # Angka (integer dan float)
+    - number:
+        regex: "\\b[0-9]+(\\.[0-9]+)?\\b"
+
+    # Grup warna default
+    # micro akan mencoba mencocokkan ini jika tidak ada aturan lain yang cocok.
+    # Disarankan untuk membiarkan warna-warna ini ditentukan oleh colorscheme pengguna.
+    - color:
+        identifier: "keyword"
+        number: "number"
+        string: "string"
+        comment: "comment"
+        special: "special"
+        # Opsi warna default (jika colorscheme tidak menentukannya):
+        # identifier.keyword: "blue,bold"
+        # identifier.special: "yellow"
+        # number: "magenta"
+        # string: "green"
+        # comment: "cyan"

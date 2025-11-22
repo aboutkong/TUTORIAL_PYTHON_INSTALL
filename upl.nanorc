@@ -1,0 +1,29 @@
+## Definisi Syntax Highlighting untuk UPL (Ukong Programming Language)
+## Untuk GNU Nano
+
+# Untuk mengaktifkan, tambahkan baris berikut ke ~/.nanorc Anda:
+# include "/path/to/this/file/upl.nanorc"
+# Atau salin konten file ini ke ~/.nanorc Anda.
+
+syntax "upl" "\.upl$"
+
+# Komentar (cyan)
+color cyan start="#" end="$"
+
+# String (hijau)
+color green "[^\"]*"
+
+# Angka (magenta) - integer dan float dasar
+color magenta "<[0-9]+(\.[0-9]+)?"
+
+# Keyword utama (biru tebal)
+color blue,bold "<(jika|selama|ulangi|fungsi|selesai|lainnya|kembali|cetak)"
+
+# Boolean (kuning)
+color yellow "<(benar|salah)"
+
+# Operator (merah)
+color red "[=\+\-\*/%<>&|!]"
+
+# Tanda kurung dan koma (putih)
+color white "[\(\)\[\],:]"
